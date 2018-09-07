@@ -1,0 +1,42 @@
+{
+  "name": "postcss-make-it-bright",
+  "version": "0.0.0",
+  "description": "PostCSS plugin make all colors more bright depends on param.",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "color",
+    "hsl",
+    "bright"
+  ],
+  "author": "postcss-make-it-bright <menshikov.ivn@gmail.com>",
+  "license": "MIT",
+  "repository": "janczer/postcss-make-it-bright",
+  "bugs": {
+    "url": "https://github.com/janczer/postcss-make-it-bright/issues"
+  },
+  "homepage": "https://github.com/janczer/postcss-make-it-bright",
+  "dependencies": {
+    "color": "^3.0.0",
+    "postcss": "^6.0.16",
+    "postcss-message-helpers": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-postcss": "^2.0.2",
+    "jest": "^22.4.2"
+  },
+  "scripts": {
+    "test": "jest && eslint *.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5",
+    "env": {
+      "jest": true
+    }
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
