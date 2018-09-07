@@ -2,22 +2,31 @@ let postcss = require('postcss');
 let helpers = require('postcss-message-helpers');
 let color = require('color');
 
-module.exports = postcss.plugin('postcss-make-it-bright', function (opts) {
-    opts = opts || {};
-
-    // Work with options here
-
+module.exports = postcss.plugin('postcss-make-it-bright', function () {
     return function (style) {
-        style.walkDecls((decl) => {
-            if (!decl.value || decl.value.indexOf('#') === -1) {
+        style.walkDecls(function (decl) {
+            if (!decl.value) {
                 return;
             }
+            let inputColor = color(decl.value);
 
-            decl.value = helpers.try(() => {
-                console.log(decl.value);
-                console.log(decl.source);
-                return color(decl.value).lighten(0.5).hex();
-            }, decl.source);
+            switch (inputColor.model) {
+            case 'rgb':
+                decl.value = helpers.try(() => {
+                    const output = inputColor.lighten(0.5);
+                    return decl.value.includes('rgb') ?
+                        output.rgb() :
+                        output.hex();
+                }, decl.source);
+                break;
+            case 'hsl':
+                decl.value = helpers.try(() => {
+                    return inputColor.lighten(0.5);
+                }, decl.source);
+                break;
+            default:
+                return;
+            }
         });
     };
 });
