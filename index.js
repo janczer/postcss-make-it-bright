@@ -2,6 +2,14 @@ let postcss = require('postcss');
 let helpers = require('postcss-message-helpers');
 let color = require('color');
 
+function _handelParseColor(value) {
+    try {
+        return color(value);
+    } catch (e) {
+        return null;
+    }
+}
+
 module.exports = postcss.plugin('postcss-make-it-bright', function (opts) {
     opts = opts || {};
     return function (style) {
@@ -9,7 +17,11 @@ module.exports = postcss.plugin('postcss-make-it-bright', function (opts) {
             if (!decl.value) {
                 return;
             }
-            let inputColor = color(decl.value);
+
+            let inputColor = _handelParseColor(decl.value);
+            if (!inputColor) {
+                return;
+            }
 
             let lighter = Number.isInteger(opts.lighter) ?
                 Number(opts.lighter) / 100 :

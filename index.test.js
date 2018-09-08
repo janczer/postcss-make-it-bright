@@ -9,6 +9,18 @@ function run(input, output, opts) {
         });
 }
 
+it('handle css with out color', () => {
+    return run('a{ margin: 1px }', 'a{ margin: 1px }', { });
+});
+
+it('handle css with out value', () => {
+    return run('a{ margin: }', 'a{ margin: }', { });
+});
+
+it('handle null options', () => {
+    return run('a{ color: #121212 }', 'a{ color: #1B1B1B }', null );
+});
+
 it('test hex color', () => {
     return run('a{ color: #121212 }', 'a{ color: #1B1B1B }', { });
 });
