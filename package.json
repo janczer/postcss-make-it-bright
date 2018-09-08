@@ -1,12 +1,13 @@
 {
   "name": "postcss-make-it-bright",
-  "version": "0.0.0",
-  "description": "PostCSS plugin make all colors more bright depends on param.",
+  "version": "0.0.1",
+  "description": "PostCSS plugin make all colors more bright.",
   "keywords": [
     "postcss",
     "css",
     "postcss-plugin",
     "color",
+    "rgb",
     "hsl",
     "bright"
   ],

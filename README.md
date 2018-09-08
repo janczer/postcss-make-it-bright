@@ -1,6 +1,6 @@
 # PostCSS Make It Bright [![Build Status][ci-img]][ci]
 
-[PostCSS] plugin make all colors more bright depends on param.
+[PostCSS] plugin make all colors more bright.
 
 [PostCSS]: https://github.com/postcss/postcss
 [ci-img]:  https://travis-ci.org/janczer/postcss-make-it-bright.svg
@@ -29,6 +29,12 @@ postcss([ require('postcss-make-it-bright') ])
 This plugin make all colors more bright, exactly 50% lighter.
 
 ## Models of color
+
+* [RGB](#rgb)
+* [RGBA](#rgba)
+* [HSL](#hsl)
+* [HSLA](#hsla)
+* [Word](#word)
 
 ### RGB
 
