@@ -36,7 +36,7 @@ This plugin make all colors more bright, exactly 50% lighter.
 * [HSLA](#hsla)
 * [Word](#word)
 
-### RGB
+#### RGB
 
 ```css
 .foo {
@@ -50,7 +50,7 @@ This plugin make all colors more bright, exactly 50% lighter.
 }
 ```
 
-### RGBA
+#### RGBA
 
 ```css
 .foo {
@@ -66,7 +66,7 @@ This plugin make all colors more bright, exactly 50% lighter.
 
 If alpha channel is `1` the plugin return a color in `rgb` model.
 
-### HSL
+#### HSL
 
 ```css
 .foo {
@@ -80,7 +80,7 @@ If alpha channel is `1` the plugin return a color in `rgb` model.
 }
 ```
 
-### HSLA
+#### HSLA
 
 ```css
 .foo {
@@ -96,7 +96,7 @@ If alpha channel is `1` the plugin return a color in `rgb` model.
 
 If the alpha channel is `1` then a plugin return a color in `rgb` model.
 
-### Word
+#### Word
 
 
 ```css
@@ -111,8 +111,9 @@ If the alpha channel is `1` then a plugin return a color in `rgb` model.
 }
 ```
 
+See [PostCSS] docs for examples for your environment.
+
 ## LICENSE
 
-MIT
+See [LICENSE](LICENSE)
 
-See [PostCSS] docs for examples for your environment.
