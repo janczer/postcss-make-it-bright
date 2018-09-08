@@ -1,10 +1,13 @@
-# PostCSS Make It Bright [![Build Status][ci-img]][ci]
+# PostCSS Make It Bright 
+[![Build Status][ci-img]][ci] [![codecov.io][cov-img]][cov]
 
 [PostCSS] plugin make all colors more bright.
 
-[PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/janczer/postcss-make-it-bright.svg
-[ci]:      https://travis-ci.org/janczer/postcss-make-it-bright
+[PostCSS]:    https://github.com/postcss/postcss
+[ci-img]:     https://travis-ci.org/janczer/postcss-make-it-bright.svg
+[ci]:         https://travis-ci.org/janczer/postcss-make-it-bright
+[cov-img]: https://codecov.io/github/janczer/postcss-make-it-bright/coverage.svg?branch=master
+[cov]:        https://codecov.io/github/janczer/postcss-make-it-bright?branch=master
 
 ```css
 .foo {
