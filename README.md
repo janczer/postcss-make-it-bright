@@ -26,7 +26,22 @@ postcss([ require('postcss-make-it-bright') ])
 
 ## How it works
 
-This plugin make all colors more bright, exactly 50% lighter.
+This plugin make all colors more bright. The default options is 50%, but you can pass options `lighter` with the value from `0` to `100`:
+
+```js
+const postcss = require('gulp-postcss');
+const gulp = require('gulp');
+const brighter = require('postcss-make-it-bright') 
+
+gulp.task('css', function () {
+    var plugins = [
+        brighter({ lighter: 85 }),
+    ];
+    return gulp.src('./src/*.css')
+        .pipe(postcss(plugins))
+        .pipe(gulp.dest('./dest'));
+});
+```
 
 ## Models of color
 
