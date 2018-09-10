@@ -23,20 +23,20 @@ module.exports = postcss.plugin('postcss-make-it-bright', function (opts) {
                 return;
             }
 
-            let lighter = Number.isInteger(opts.lighter) ?
-                Number(opts.lighter) / 100 :
+            let value = Number.isInteger(opts.value) ?
+                Number(opts.value) / 100 :
                 0.5;
-            if (lighter > 1) {
-                lighter = 1;
+            if (value > 1) {
+                value = 1;
             }
-            if (lighter < 0) {
-                lighter = 0;
+            if (value < 0) {
+                value = 0;
             }
 
             switch (inputColor.model) {
             case 'rgb':
                 decl.value = helpers.try(() => {
-                    const output = inputColor.lighten(lighter);
+                    const output = inputColor.lighten(value);
                     return decl.value.includes('rgb') ?
                         output.rgb() :
                         output.hex();
@@ -44,7 +44,7 @@ module.exports = postcss.plugin('postcss-make-it-bright', function (opts) {
                 break;
             case 'hsl':
                 decl.value = helpers.try(() => {
-                    return inputColor.lighten(lighter);
+                    return inputColor.lighten(value);
                 }, decl.source);
                 break;
             default:
